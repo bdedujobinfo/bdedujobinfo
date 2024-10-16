@@ -5,12 +5,12 @@ import { Jobs } from "./Jobs";
 import { useParams } from "react-router-dom";
 
 export const JobDetails = () => {
-  const { id } = useParams(); // URL থেকে id পেতে useParams ব্যবহার
+  const { id } = useParams(); 
   const [post, setPost] = useState(null);
 
   useEffect(() => {
     axios.get("/data.json").then((response) => {
-      const postData = response.data.find((p) => p.id === parseInt(id)); // id অনুসারে post খুঁজে বের করা
+      const postData = response.data.find((p) => p.id === parseInt(id)); 
       setPost(postData);
     });
   }, [id]);

@@ -12,7 +12,6 @@ export const JobInfo = () => {
   }, []);
   return (
     <div>
-      Job Info Page
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5 px-5 mx-auto">
         {posts.map((post) => (
           <Link
