@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Route, Routes } from "react-router-dom";
 import { JobInfo } from "./pages/JobInfo";
 import { EduInfo } from "./pages/EduInfo";
@@ -14,6 +15,7 @@ import { JobDetails } from "./posts/jobs/JobDetails";
 function App() {
   return (
     <div>
+      <Analytics />
       <Header />
       <Routes>
         <Route path="/" element={<JobInfo />} />
