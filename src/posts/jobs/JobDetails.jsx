@@ -9,7 +9,7 @@ export const JobDetails = () => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    axios.get("/src/posts/jobs/data.json").then((response) => {
+    axios.get("/public/data.json").then((response) => {
       const postData = response.data.find((p) => p.id === parseInt(id)); // id অনুসারে post খুঁজে বের করা
       setPost(postData);
     });
