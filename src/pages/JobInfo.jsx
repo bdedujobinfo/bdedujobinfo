@@ -5,7 +5,7 @@ import axios from "axios";
 export const JobInfo = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get("/data.json").then((response) => {
+    axios.get("/data/job-info-data.json").then((response) => {
       console.log(response?.data);
       setPosts(response.data);
     });
@@ -17,10 +17,10 @@ export const JobInfo = () => {
           <Link
             to={`/job-info/${post.id}`}
             key={post?.id}
-            className="border shadow rounded-md  p-8 "
+            className="border shadow rounded-md  p-8  "
           >
             <div className="flex flex-col gap-4">
-              <p className="text-2xl font-bold hover:underline duration-300 underline-offset-8">
+              <p className="text-2xl font-bold hover:underline duration-300 underline-offset-8 text-justify">
                 {post?.title}
               </p>
 

@@ -7,7 +7,7 @@ export const Jobs = ({ post }) => {
     <div className="px-3">
       <div className="border shadow rounded-md  p-8 my-5">
         <div className="flex flex-col gap-4">
-          <p className="text-2xl font-bold hover:underline duration-300 underline-offset-8">
+          <p className="text-2xl font-bold hover:underline duration-300 underline-offset-8 text-justify">
             {post?.title}
           </p>
 
@@ -23,16 +23,15 @@ export const Jobs = ({ post }) => {
               </span>
             ))}
           </p>
-          <button className="bg-black hover:bg-gray-800 text-white duration-700 rounded-md px-4 py-2 font-medium text-sm">
-            <a
-              href={post.link}
-              download={post.download}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download pdf
-            </a>
-          </button>
+          <a
+            className={`bg-black hover:bg-gray-800 text-white duration-700 rounded-md px-4 py-2 font-medium text-sm text-center ${post.btnStyle}`}
+            href={post.link}
+            download={post.download}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {post.btnName}
+          </a>
         </div>
       </div>
     </div>

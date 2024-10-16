@@ -9,7 +9,7 @@ export const JobDetails = () => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    axios.get("/data.json").then((response) => {
+    axios.get("/data/job-info-data.json").then((response) => {
       const postData = response.data.find((p) => p.id === parseInt(id)); 
       setPost(postData);
     });
