@@ -4,10 +4,10 @@ import React from "react";
 
 export const Jobs = ({ post }) => {
   return (
-    <div className="px-3">
+    <div className="px-3 max-w-screen-md mx-auto">
       <div className="border shadow rounded-md  p-8 my-5">
         <div className="flex flex-col gap-4">
-          <p className="text-2xl font-bold hover:underline duration-300 underline-offset-8 text-justify">
+          <p className="text-2xl font-bold hover:underline duration-300 underline-offset-8">
             {post?.title}
           </p>
 
@@ -15,7 +15,7 @@ export const Jobs = ({ post }) => {
             আবেদনের শেষ তারিখঃ {post?.lastDate}
           </p>
 
-          <p className="text-justify">
+          <p>
             {post.details.split("\n").map((line, index) => (
               <span key={index}>
                 {line}
@@ -24,7 +24,7 @@ export const Jobs = ({ post }) => {
             ))}
           </p>
           <a
-            className={`bg-black hover:bg-gray-800 text-white duration-700 rounded-md px-4 py-2 font-medium text-sm text-center ${post.btnStyle}`}
+            className={`bg-black hover:bg-gray-800 text-white duration-700 rounded-md px-4 py-3 font-medium text-sm text-center ${post.btnStyle}`}
             href={post.link}
             download={post.download}
             target="_blank"
