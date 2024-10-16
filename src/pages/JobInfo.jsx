@@ -5,7 +5,7 @@ import axios from "axios";
 export const JobInfo = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get("/public/data.json").then((response) => {
+    axios.get("https://bdedujobinfo.vercel.app/data.json").then((response) => {
       console.log(response?.data);
       setPosts(response.data);
     });
