@@ -1,7 +1,11 @@
 import { Analytics } from "@vercel/analytics/react";
 import { Route, Routes } from "react-router-dom";
-import { JobInfo } from "./pages/JobInfo";
-import { EduInfo } from "./pages/EduInfo";
+import { JobInfo } from "./pages/jobs/JobInfo";
+import { JobDetails } from "./pages/jobs/JobDetails";
+
+import { EduInfo } from "./pages/edu/EduInfo";
+import { EduDetails } from "./pages/edu/EduDetails";
+
 import { JobPreparation } from "./pages/JobPreparation";
 import { EnglishGrammar } from "./pages/EnglishGrammar";
 import { BanglaGrammar } from "./pages/BanglaGrammar";
@@ -10,7 +14,6 @@ import { CurrentAffairs } from "./pages/CurrentAffairs";
 import { GeneralKnowledge } from "./pages/GeneralKnowledge";
 import { Tutorials } from "./pages/Tutorials";
 import { Header } from "./components/shared/Header";
-import { JobDetails } from "./posts/jobs/JobDetails";
 
 function App() {
   return (
@@ -20,7 +23,11 @@ function App() {
       <Routes>
         <Route path="/" element={<JobInfo />} />
         <Route path="/job-info/:id" element={<JobDetails />} />
+        {/* =================================================== */}
         <Route path="edu-info" element={<EduInfo />} />
+        <Route path="edu-info/:id" element={<EduDetails />} />
+
+        {/* ==================================================== */}
         <Route path="job-preparation" element={<JobPreparation />} />
         <Route path="english-grammar" element={<EnglishGrammar />} />
         <Route path="bangla-grammar" element={<BanglaGrammar />} />

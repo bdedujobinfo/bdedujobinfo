@@ -11,10 +11,8 @@ export const Jobs = ({ post }) => {
             {post?.title}
           </p>
 
-          <p className="text-sm text-red-800 font-normal">
-            আবেদনের শেষ তারিখঃ {post?.lastDate}
-          </p>
-
+          <p className="text-sm text-red-800 font-normal">{post?.lastDate}</p>
+          <img className="rounded-md" src={post.titleImg} alt={post.title} />
           <p>
             {post.details.split("\n").map((line, index) => (
               <span key={index}>
@@ -23,11 +21,22 @@ export const Jobs = ({ post }) => {
               </span>
             ))}
           </p>
+
+          {/* <p>
+            
+            {post.details.map((detail, index) => (
+              <span key={index}>
+                {detail.info} <br />
+              </span>
+            ))}
+          </p>  */}
+          <img className="rounded-md" src={post.postImg} alt={post.title} />
+
           <a
             className={`bg-black hover:bg-gray-800 text-white duration-700 rounded-md px-4 py-3 font-medium text-sm text-center ${post.btnStyle}`}
             href={post.link}
             download={post.download}
-            target="_blank"
+            
             rel="noreferrer"
           >
             {post.btnName}
