@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+
 export const JobInfo = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -11,9 +13,12 @@ export const JobInfo = () => {
     });
   }, []);
   return (
-    <div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5 px-5 mx-auto">
+    <div className="mt-5 px-5 py-2 mx-auto">
+      <h1 className="flex items-center text-2xl text-slate-950 font-bold">
+        চাকরির তথ্য
+        <MdKeyboardDoubleArrowRight size="35" />
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
         {posts.map((post) => (
           <Link
             to={`/job-info/${post.id}`}
