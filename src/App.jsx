@@ -14,6 +14,7 @@ import { CurrentAffairs } from "./pages/CurrentAffairs";
 import { GeneralKnowledge } from "./pages/GeneralKnowledge";
 import { Tutorials } from "./pages/Tutorials";
 import { Header } from "./components/shared/Header";
+import { HomePage } from "./pages/HomePage";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       <Analytics />
       <Header />
       <Routes>
-        <Route path="/" element={<JobInfo />} />
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="job-info" element={<JobInfo />} />
         <Route path="/job-info/:id" element={<JobDetails />} />
         {/* =================================================== */}
         <Route path="edu-info" element={<EduInfo />} />

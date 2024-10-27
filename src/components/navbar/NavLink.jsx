@@ -5,9 +5,14 @@ import { Outlet, Link } from "react-router-dom";
 export const NavLink = () => {
      const navBar = [
        {
+         id: 0,
+         name: "হোম", 
+         link: "/",
+       },
+       {
          id: 1,
          name: "চাকরির তথ্য",
-         link: "/",
+         link: "job-info",
        },
        {
          id: 2,
@@ -57,6 +62,7 @@ export const NavLink = () => {
           <Link className='py-2 font-semibold' to={link}>{name}</Link>
         </li>
       ))}
+      <Outlet/>
     </nav>
   );
 }
