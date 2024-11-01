@@ -2,7 +2,6 @@
 
 export const Dictionary = () => {
   return (
-    <div>
-      Dictionary</div>
-  )
+    <div className="text-center pt-28 text-2xl font-bold"> Coming Soon...</div>
+  );
 }

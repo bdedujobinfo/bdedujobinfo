@@ -1,7 +1,6 @@
-import React from 'react'
 
 export const GeneralKnowledge = () => {
   return (
-    <div>GeneralKnowledge</div>
-  )
+    <div className="text-center pt-28 text-2xl font-bold"> Coming Soon...</div>
+  );
 }

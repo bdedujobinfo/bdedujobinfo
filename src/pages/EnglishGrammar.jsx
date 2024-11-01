@@ -2,7 +2,6 @@
 
 export const EnglishGrammar = () => {
   return (
-    <div>
-      EnglishGrammar</div>
-  )
+    <div className="text-center pt-28 text-2xl font-bold"> Coming Soon...</div>
+  );
 }
