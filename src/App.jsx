@@ -15,6 +15,7 @@ import { GeneralKnowledge } from "./pages/GeneralKnowledge";
 import { Tutorials } from "./pages/Tutorials";
 import { Header } from "./components/shared/Header";
 import { HomePage } from "./pages/HomePage";
+import { Footer } from "./components/shared/Footer";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="general-knowledge" element={<GeneralKnowledge />} />
         <Route path="tutorials" element={<Tutorials />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

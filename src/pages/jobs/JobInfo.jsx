@@ -14,7 +14,7 @@ export const JobInfo = () => {
   }, []);
   return (
     <div className="mt-5 px-5 py-2 mx-auto">
-      <h1 className="flex items-center text-2xl text-slate-950 font-bold">
+      <h1 className="flex items-center text-2xl text-slate-950 font-bold pt-16 ">
         চাকরির তথ্য
         <MdKeyboardDoubleArrowRight size="35" />
       </h1>
