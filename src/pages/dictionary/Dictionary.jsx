@@ -47,7 +47,8 @@ export const Dictionary = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
         {loading ? (
-          <DataLoading />
+          // <DataLoading />
+          <p>Data Loading...</p>
         ) : filterSearch.length > 0 ? (
           filterSearch.map((word) => (
             <DictionaryDetails key={word.id} word={word} />
