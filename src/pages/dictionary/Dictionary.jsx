@@ -13,7 +13,7 @@ export const Dictionary = () => {
   const [filterSearch, setFilterSearch] = useState([]);
 
   useEffect(() => {
-    axios.get("/public/data/english-dictionary-data.json").then((response) => {
+    axios.get("/data/dictionary-data.json").then((response) => {
       setWords(response.data);
       setLoading(false);
       setFilterSearch(response.data);
@@ -47,8 +47,8 @@ export const Dictionary = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
         {loading ? (
-          // <DataLoading />
-          <p>Data Loading...</p>
+          <DataLoading />
+          // <p>Data Loading...</p>
         ) : filterSearch.length > 0 ? (
           filterSearch.map((word) => (
             <DictionaryDetails key={word.id} word={word} />
