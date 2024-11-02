@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "ABC",
+    "meaning": "সাধারণ জ্ঞান",
+    "synonyms": "abc",
+    "antonyms": "xyz"
+  },
+  {
+    "id": 2,
+    "name": "ABC",
+    "meaning": "সাধারণ জ্ঞান",
+    "synonyms": "abc",
+    "antonyms": "xyz"
+  }
+]
