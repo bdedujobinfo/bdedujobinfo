@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Search } from "./Search";
+import { Search } from "../../components/shared/Search";
 import { DictionaryDetails } from "./DictionaryDetails";
 import { ErrorMessage } from "../../components/shared/ErrorMessage";
 import { DataLoading } from "../../components/shared/DataLoading";
@@ -43,13 +43,15 @@ export const Dictionary = () => {
   return (
     <div className="mt-5 px-5 py-2 mx-auto">
       <div className="pt-16">
-        <Search search={search} searchHandler={searchHandler} />
+        <Search search={search} searchHandler={searchHandler}>
+          English OR Bangla
+        </Search>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
         {loading ? (
           <DataLoading />
-          // <p>Data Loading...</p>
-        ) : filterSearch.length > 0 ? (
+        ) : // <p>Data Loading...</p>
+        filterSearch.length > 0 ? (
           filterSearch.map((word) => (
             <DictionaryDetails key={word.id} word={word} />
           ))

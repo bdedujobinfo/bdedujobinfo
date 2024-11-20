@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 
-export const Search = ({ search, searchHandler }) => {
+export const Search = ({ search, searchHandler, children }) => {
   return (
     <>
       <div className="bg-[#076298] p-2 w-80 text-center rounded-lg">
@@ -10,7 +10,7 @@ export const Search = ({ search, searchHandler }) => {
           className="px-5 py-3 rounded-lg focus:outline-none"
           type="search"
           name="search"
-          placeholder="English OR Bangla"
+          placeholder={children}
           value={search}
           onChange={searchHandler}
         />
