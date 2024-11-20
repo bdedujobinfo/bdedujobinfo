@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { Outlet, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 
 export const NavLink = () => {
      const navBar = [
@@ -62,7 +62,7 @@ export const NavLink = () => {
           <Link className='py-2 font-semibold' to={link}>{name}</Link>
         </li>
       ))}
-      <Outlet/>
+    
     </nav>
   );
 }

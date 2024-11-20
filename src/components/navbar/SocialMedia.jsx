@@ -41,7 +41,7 @@ export const SocialMedia = () => {
   ];
   return (
     <div>
-      <ul className="flex gap-2 flex-col items-center">
+      <ul className="flex justify-center gap-2  items-center">
         {socialLink.map(({ id, logo, link }) => (
           <li
             key={id}

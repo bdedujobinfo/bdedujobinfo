@@ -1,105 +1,159 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
-import { SocialMedia } from "./SocialMedia";
-import { Logo } from "./Logo";
-import { NavLink } from "./NavLink";
-import { DatePicker } from "./DatePicker";
 import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { Logo } from "./Logo";
+
 export const Navbar = () => {
-  // State to control the dropdown visibility
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const deskNav = [
+    {
+      id: 0,
+      name: "হোম",
+      link: "/",
+    },
 
-  // Toggle function for the dropdown
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
-  };
+    {
+      id: 3,
+      name: "চাকরির প্রস্তুতি ",
+      link: "job-preparation",
+    },
+    {
+      id: 4,
+      name: "English Grammar",
+      link: "english-grammar",
+    },
+    {
+      id: 5,
+      name: "বাংলা ব্যাকরণ",
+      link: "bangla-grammar",
+    },
+    {
+      id: 6,
+      name: "Dictionary",
+      link: "dictionary",
+    },
+  ];
+  const navBar = [
+    {
+      id: 0,
+      name: "হোম",
+      link: "/",
+    },
+    {
+      id: 1,
+      name: "চাকরির তথ্য",
+      link: "job-info",
+    },
+    {
+      id: 2,
+      name: "শিক্ষা তথ্য",
+      link: "edu-info",
+    },
+    {
+      id: 3,
+      name: "চাকরির প্রস্তুতি ",
+      link: "job-preparation",
+    },
+    {
+      id: 4,
+      name: "English Grammar",
+      link: "english-grammar",
+    },
+    {
+      id: 5,
+      name: "বাংলা ব্যাকরণ",
+      link: "bangla-grammar",
+    },
+    {
+      id: 6,
+      name: "Dictionary",
+      link: "dictionary",
+    },
+    {
+      id: 7,
+      name: "জানার আছে",
+      link: "general-knowledge",
+    },
+    {
+      id: 8,
+      name: "আজকের বিশ্ব",
+      link: "current-affairs",
+    },
+    {
+      id: 9,
+      name: "টিউটোরিয়াল",
+      link: "tutorials",
+    },
+  ];
 
-  // Function to close the dropdown when a link is clicked
-  const closeDropdown = () => {
-    setIsDropdownOpen(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div>
-      <div className="navbar bg-base-100 justify-between items-center ">
-        <div >
-          <div className="navbar-start">
-            <div className="dropdown">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle"
-                onClick={toggleDropdown} // Added onClick handler
-              >
-                {isDropdownOpen ? (
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-7 w-7"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg> // Close icon
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-7 w-7"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 6h16M4 12h16M4 18h7"
-                    />
-                  </svg> // 3 dot icon
-                )}
-              </div>
-              {isDropdownOpen && ( // Conditional rendering based on state
-                <ul
-                  tabIndex={0}
-                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-                  onClick={closeDropdown} // Added to close the dropdown when clicked
-                >
-                  <NavLink />
-                </ul>
-              )}
-            </div>
-          </div>
-        </div>
-        {/* ================================================== */}
+    <header className=" bg-white shadow  py-4 fixed top-0 left-0 w-full z-50">
+      <nav className="flex items-center justify-between max-w-screen-xl mx-auto px-6">
+        {/* Logo */}
         <div>
-          <div>
-            <a>
-              {" "}
-              <Logo />
-            </a>
-          </div>
+          <Link to="/">
+            {" "}
+            <Logo />{" "}
+          </Link>
         </div>
-        {/* ==================================================== */}
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex space-x-8">
+          {deskNav.map(({ id, name, link, isLogin }) => (
+            <NavLink
+              key={id}
+              to={link}
+              className={({ isActive }) =>
+                `text-lg font-medium hover:text-blue-400 transition ${
+                  isActive ? "underline underline-offset-4 text-blue-400" : ""
+                }`
+              }
+            >
+              {name}
+            </NavLink>
+          ))}
+        </div>
+        {/* Hamburger Icon for Mobile */}
         <div>
-          <div>
-            <ul className="menu menu-horizontal px-1">
-              <li>
-                <details>
-                  <summary>Social Media</summary>
-                  <ul className="bg-base-100 rounded-t-none p-2">
-                    <SocialMedia />
-                  </ul>
-                </details>
-              </li>
-            </ul>
-          </div>
+          <button
+            onClick={toggleMenu}
+            className="text-black text-2xl focus:outline-none "
+          >
+            {isMenuOpen ? "×" : "☰"}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Navigation Menu */}
+      <div
+        className={`fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 transform ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-all duration-300 ease-in-out`}
+      >
+        <div className="flex justify-end p-6">
+          <button onClick={toggleMenu} className="text-white text-3xl">
+            ×
+          </button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 text-center items-center space-y-6 ">
+          {navBar.map(({ id, name, link, isLogin }) => (
+            <NavLink
+              key={id}
+              to={link}
+              className={({ isActive }) =>
+                `text-2xl font-medium text-white hover:text-blue-400 transition ${
+                  isActive ? "underline underline-offset-4 text-blue-400" : ""
+                }`
+              }
+              onClick={() => setIsMenuOpen(false)} // Close the menu on click
+            >
+              {name}
+            </NavLink>
+          ))}
         </div>
       </div>
-    </div>
+    </header>
   );
 };
