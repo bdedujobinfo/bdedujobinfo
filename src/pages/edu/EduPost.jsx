@@ -32,7 +32,7 @@ export const EduPost = ({ post }) => {
             </p>
 
             <img className="rounded-md" src={post?.img} alt={post?.title} />
-            <p className="text-slate-950">
+            <p className="text-slate-950 ">
               {post.content.split("\n").map((line, index) => (
                 <span key={index}>
                   {line}
