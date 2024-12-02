@@ -12,7 +12,7 @@ export const EduPost = ({ post }) => {
         <title>{post?.title}</title>
         <meta name="author" content="bdedujob.info" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
         <meta
           name="description"
           content="BD Edu Job - Latest Job Circular and Educational News in Bangladesh."
@@ -23,13 +23,16 @@ export const EduPost = ({ post }) => {
       <div className="px-3 max-w-screen-md mx-auto">
         <div className="border shadow rounded-md  p-8 my-5">
           <div className="flex flex-col gap-4">
-            <p className="text-2xl font-bold hover:underline duration-300 underline-offset-8">
+            <p className="text-2xl font-bold hover:underline duration-300 underline-offset-8 text-slate-950">
               {post?.title}
             </p>
-            {/* <p className="text-sm text-red-800 font-normal">{post?.content}</p> */}
+            <p className="flex items-center gap-1">
+              {" "}
+              <img className="w-8 " src="/favicon.ico" alt={post?.title} /> <span className="text-sm text-slate-800 font-normal">{post?.published}</span>
+            </p>
 
-            <img className="rounded-md" src={post.img} alt={post.title} />
-            <p>
+            <img className="rounded-md" src={post?.img} alt={post?.title} />
+            <p className="text-slate-950">
               {post.content.split("\n").map((line, index) => (
                 <span key={index}>
                   {line}

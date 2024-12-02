@@ -23,10 +23,10 @@ export const JobInfo = () => {
           <Link
             to={`/job-info/${post.id}`}
             key={post?.id}
-            className="border shadow rounded-md  p-8  "
+            className="border shadow rounded-md p-8"
           >
-            <div className="flex flex-col gap-4">
-              <p className="text-xl md:text-2xl font-bold hover:underline duration-300 underline-offset-8  ">
+            <div className="flex flex-col gap-2">
+              <p className="text-xl md:text-2xl text-slate-900 font-bold hover:underline duration-300 underline-offset-8">
                 {post?.title}
               </p>
 

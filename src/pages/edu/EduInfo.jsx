@@ -25,14 +25,14 @@ export const EduInfo = () => {
             key={post?.id}
             className="border shadow rounded-md  p-8  "
           >
-            <div className="flex flex-col gap-4">
-              <p className="text-xl md:text-2xl font-bold hover:underline duration-300 underline-offset-8  ">
+            <div className="flex flex-col gap-2">
+              <p className="text-xl md:text-2xl text-slate-900 font-bold hover:underline duration-300 underline-offset-8">
                 {post?.title}
               </p>
 
-              {/* <p className="text-sm text-red-800 font-normal line-clamp-1">
-                {post?.details}
-              </p> */}
+              <p className="text-sm text-red-800 font-normal line-clamp-1">
+                {post?.published}
+              </p>
             </div>
           </Link>
         ))}

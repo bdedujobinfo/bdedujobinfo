@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Search } from "../../components/shared/Search";
