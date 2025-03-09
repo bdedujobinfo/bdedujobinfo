@@ -63,7 +63,7 @@ export const Navbar = () => {
             onClick={toggleMenu}
             className="text-black text-2xl focus:outline-none z-50"
           >
-            {isMenuOpen ? "×" : "☰"}
+            {isMenuOpen ? "" : "☰"}
           </button>
         </div>
       </nav>
